@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    
 }
 
 <h2>Index</h2>
@@ -9,7 +10,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-dark">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.User_name)
@@ -24,8 +25,8 @@
             @Html.DisplayNameFor(model => model.user_id)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.for_user)
-        </th>*@
+                @Html.DisplayNameFor(model => model.for_user)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.mobile_no)
         </th>
@@ -33,44 +34,48 @@
             @Html.DisplayNameFor(model => model.User_role)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.Master_user)
-        </th>*@
+                @Html.DisplayNameFor(model => model.Master_user)
+            </th>*@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.User_name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.user_id)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.for_user)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.mobile_no)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User_role)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Master_user)
-        </td>*@
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @*@Html.ActionLink("Details", "Details", new { id=item.id }) |*@
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-            
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
 
-</table>
+        
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_id)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.for_user)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.mobile_no)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_role)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Master_user)
+                </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @*@Html.ActionLink("Details", "Details", new { id=item.id }) |*@
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+
+            </td>
+        </tr>
+       
+        }
+
+    </table>

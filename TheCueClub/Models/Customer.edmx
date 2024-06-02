@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Cue_Club_CoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Club_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Club_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Club_code" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="100" />
+          <Property Name="mobile_no" Type="nvarchar" MaxLength="50" />
+          <Property Name="Club_group" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="customer_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Customer_id" Type="varchar" MaxLength="50" />
+          <Property Name="Customer_name" Type="varchar" MaxLength="50" />
+          <Property Name="mobile_no" Type="nvarchar" MaxLength="50" />
+          <Property Name="opening_balance" Type="numeric" Precision="35" Scale="0" />
+          <Property Name="for_cust_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Login_Details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="for_user" Type="int" />
+          <Property Name="mobile_no" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_role" Type="nvarchar" MaxLength="50" />
+          <Property Name="Master_user" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="Cue_Club_CoreModelStoreContainer">
+          <EntitySet Name="Club_details" EntityType="Self.Club_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer_details" EntityType="Self.customer_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login_Details" EntityType="Self.Login_Details" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Cue_Club_CoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="customer_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Customer_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mobile_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="opening_balance" Type="Decimal" Precision="35" Scale="0" />
+          <Property Name="for_cust_id" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="Cue_Club_CoreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="customer_details" EntityType="Self.customer_details" />
+          <EntitySet Name="Club_details" EntityType="Cue_Club_CoreModel.Club_details" />
+          <EntitySet Name="Login_Details" EntityType="Cue_Club_CoreModel.Login_Details" />
+        </EntityContainer>
+        <EntityType Name="Club_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Club_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Club_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="mobile_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Club_group" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Login_Details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="for_user" Type="Int32" />
+          <Property Name="mobile_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Master_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Cue_Club_CoreModelStoreContainer" CdmEntityContainer="Cue_Club_CoreEntities">
+          <EntitySetMapping Name="customer_details">
+            <EntityTypeMapping TypeName="Cue_Club_CoreModel.customer_details">
+              <MappingFragment StoreEntitySet="customer_details">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Customer_id" ColumnName="Customer_id" />
+                <ScalarProperty Name="Customer_name" ColumnName="Customer_name" />
+                <ScalarProperty Name="mobile_no" ColumnName="mobile_no" />
+                <ScalarProperty Name="opening_balance" ColumnName="opening_balance" />
+                <ScalarProperty Name="for_cust_id" ColumnName="for_cust_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Club_details">
+            <EntityTypeMapping TypeName="Cue_Club_CoreModel.Club_details">
+              <MappingFragment StoreEntitySet="Club_details">
+                <ScalarProperty Name="Club_group" ColumnName="Club_group" />
+                <ScalarProperty Name="mobile_no" ColumnName="mobile_no" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="Club_code" ColumnName="Club_code" />
+                <ScalarProperty Name="Club_name" ColumnName="Club_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_Details">
+            <EntityTypeMapping TypeName="Cue_Club_CoreModel.Login_Details">
+              <MappingFragment StoreEntitySet="Login_Details">
+                <ScalarProperty Name="Master_user" ColumnName="Master_user" />
+                <ScalarProperty Name="User_role" ColumnName="User_role" />
+                <ScalarProperty Name="mobile_no" ColumnName="mobile_no" />
+                <ScalarProperty Name="for_user" ColumnName="for_user" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="User_name" ColumnName="User_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

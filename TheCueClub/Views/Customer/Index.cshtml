@@ -1,0 +1,60 @@
+﻿@model IEnumerable<TheCueClub.Models.customer_details>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customer List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Add")
+</p>
+<div class="table-responsive text-nowrap">
+    <table class="table">
+        <tr >
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mobile_no)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.opening_balance)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.for_cust_id)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mobile_no)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.opening_balance)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.for_cust_id)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { Customer_id = item.Customer_id }) |
+                    @*@Html.ActionLink("Details", "Details", new { Customer_id = item.Customer_id }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { Customer_id = item.Customer_id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

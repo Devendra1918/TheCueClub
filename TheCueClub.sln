@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32630.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheCueClub", "TheCueClub\TheCueClub.csproj", "{FB8DB146-5465-4926-8785-D31F223636FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB8DB146-5465-4926-8785-D31F223636FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8DB146-5465-4926-8785-D31F223636FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8DB146-5465-4926-8785-D31F223636FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8DB146-5465-4926-8785-D31F223636FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11F9347C-5B4D-49F4-B3A7-C6BA097103EC}
+	EndGlobalSection
+EndGlobal

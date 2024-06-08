@@ -307,7 +307,7 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
-    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Shared\Login.cshtml" />
     <Content Include="Views\src\fonts\boxicons.scss" />
     <Content Include="Views\src\libs\apex-charts\apex-charts.scss" />
     <Content Include="Views\src\libs\highlight\highlight-github.scss" />

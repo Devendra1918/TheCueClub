@@ -15,8 +15,17 @@ namespace TheCueClub.Controllers
        
         public ActionResult Index()
         {
-            var obj = db.customer_details.ToList();
-            return View(obj);
+            if (Session["user_id"] != null && Session["user_id"].ToString() != "")
+            {
+                var obj = db.customer_details.ToList();
+                return View(obj);
+            }
+            else
+
+            {
+                return View("Login");
+            }
+            return View();
         }
 
         [HttpGet]

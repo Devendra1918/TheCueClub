@@ -9,12 +9,24 @@ namespace TheCueClub.Controllers
 {
     public class UserController : Controller
     {
+        
         Cue_Club_CoreEntities db = new Cue_Club_CoreEntities();
         // GET: User
         public ActionResult Index()
+        
+        
         {
-            var data = db.Login_Details.ToList();
-            return View(data);
+            if (Session["user_id"] != null && Session["user_id"].ToString() != "")
+            {
+                var data = db.Login_Details.ToList();
+                return View(data);
+            }
+            else
+
+            {
+                return View("Login");
+            }
+            return View();
         }
         [HttpGet]
         public ActionResult Create()
@@ -109,13 +121,18 @@ namespace TheCueClub.Controllers
        
         [HttpPost]
         public ActionResult Login(Login_model lm)
-        {
+         {
             if (ModelState.IsValid)
             {
                 var data = db.Login_Details.Where(x => x.Email == lm.Email && x.Password == lm.password).FirstOrDefault();
                 if (data != null)
                 {
+                    Session["User_name"] = data.User_name;
+                    Session["User_role"] = data.User_role;
+                    Session["Email"] = data.Email;
+                    Session["user_id"] = data.user_id;
                   return  RedirectToAction("Index", "User");
+
                 }
                 else
                 {

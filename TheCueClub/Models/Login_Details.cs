@@ -16,7 +16,8 @@ namespace TheCueClub.Models
     public partial class Login_Details
     {
         public int id { get; set; }
-        [Display(Name = "User Name")]
+        //[Display(Name = "User Name")]
+        [Display(Name = "Name")]
         public string User_name { get; set; }
         [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Please enter a valid e-mail adress")]
         public string Email { get; set; }
